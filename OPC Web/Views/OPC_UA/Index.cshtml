@@ -1,0 +1,36 @@
+@{
+    ViewData["Title"] = "OPC UA Controller";
+}
+
+<div class="text-center">
+    <h2>OPC UA Client</h2>
+
+    <form asp-action="Connect" method="post">
+        <label>Server URL:</label>
+        <input type="text" name="serverUrl" placeholder="opc.tcp://server:port" required />
+        <button type="submit">Connect</button>
+    </form>
+    <hr />
+    <form asp-action="Read" method="post">
+        <label>Node ID:</label>
+        <input type="text" name="nodeId" placeholder="Enter Node ID" required />
+        <button type="submit">Read</button>
+    </form>
+    <hr />
+    <form asp-action="Write" method="post">
+        <label>Node ID:</label>
+        <input type="text" name="nodeId" placeholder="Enter Node ID" required />
+        <label>Write Value:</label>
+        <input type="text" name="writeValue" placeholder="Value to Write" required />
+        <button type="submit">Write</button>
+    </form>
+    <hr />
+    <form asp-action="Disconnect" method="post">
+        <button type="submit">Disconnect</button>
+    </form>
+    <hr />
+
+</div>
+<div>
+    <p>@ViewBag.StatusMessage</p>
+</div>
