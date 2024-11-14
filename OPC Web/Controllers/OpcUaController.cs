@@ -4,11 +4,11 @@ using OPC_Web.Services;
 
 namespace OPC_Web.Controllers
 {
-    public class OPC_UA_Controller : Controller
+    public class OpcUaController : Controller
     {
-        private readonly OPC_UA_Service _opcService;
+        private readonly OpcUaService _opcService;
         private string serverUrl = "opc.tcp://172.26.134.121:49320";
-        public OPC_UA_Controller(OPC_UA_Service opcService)
+        public OpcUaController(OpcUaService opcService)
         {
             _opcService = opcService;
         }
@@ -50,12 +50,12 @@ namespace OPC_Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult Write(string nodeId, string value)
+        public IActionResult Write(string nodeId, string writeValue)
         {
             try
             {
-                _opcService.WriteNode(nodeId, value);
-                ViewBag.StatusMessage = $"Wrote Value: {value}";
+                _opcService.WriteNode(nodeId, writeValue);
+                ViewBag.StatusMessage = $"Wrote Value: {writeValue}";
             }
             catch (Exception ex)
             {

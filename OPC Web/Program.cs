@@ -9,7 +9,7 @@ namespace OPC_Web
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            builder.Services.AddSingleton<OPC_UA_Service>();
+            builder.Services.AddSingleton<OpcUaService>();
 
             var app = builder.Build();
 

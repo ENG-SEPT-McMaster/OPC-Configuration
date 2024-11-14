@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\OPC_UA\" />
+    <Folder Include="Views\OpcUa\" />
   </ItemGroup>
 
 </Project>

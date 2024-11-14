@@ -2,7 +2,7 @@
 
 namespace OPC_Web.Services
 {
-    public class OPC_UA_Service : IDisposable
+    public class OpcUaService : IDisposable
     {
         private OpcClient _opcClient;
 
